@@ -1,0 +1,24 @@
+{% extends 'school/base.html' %}
+
+
+
+{% block content %}
+<div class="container">
+    <form class="example" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+</div>
+
+<div class="container">
+    {% if check == 'found' %}
+    <p>ID: {{result.student_id}} ชื่อนักเรียน: {{result.student_name}}</p>
+    {% elif check == 'notfound' %}
+    <p>{{result}}</p>
+    {% else %}
+    <p>ค้นหาข้อมูลโดยกรอกรหัสประจำตัว</p>
+    {% endif %}
+</div>
+
+{% endblock content %}

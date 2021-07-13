@@ -2,14 +2,15 @@
 {% block content %}
 <div class="container">
         <form method="POST">
+          {% csrf_token %}
             <div class="form-group">
-                <label for="Firstname">Firstname</label>
-                <input type="email" class="form-control" placeholder="Enter firstname" id="first_name" name='first_name'>
+                <label for="first_name">Firstname</label>
+                <input type="text" class="form-control" placeholder="Enter firstname" id="first_name" name='first_name'>
               </div>
 
               <div class="form-group">
-                <label for="Lastname">Lastname</label>
-                <input type="email" class="form-control" placeholder="Enter lastname" id="last_name" name='last_name'>
+                <label for="last_name">Lastname</label>
+                <input type="text" class="form-control" placeholder="Enter lastname" id="last_name" name='last_name'>
               </div>
 
             <div class="form-group">
@@ -18,8 +19,8 @@
             </div>
 
             <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" placeholder="Enter password" id="pwd" name='email'>
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" placeholder="Enter password" id="password" name='password'>
             </div>
 
             <div class="form-group form-check">

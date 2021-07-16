@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Uncle Template</title>
+    <title>DJANGO BACKEND</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/jumbotron/">
 
@@ -76,11 +76,19 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'score-page' %}">Scroe</a>
       </li>
-
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'search-page' %}">Search</a>
+      </li>
+      {% endif %}
     </ul>
     <div>
       {% if user.is_authenticated %}
-        <font color="white"> สวัสดี &nbsp {{user.first_name}}&nbsp&nbsp{{user.last_name}}</font>
+      <a href="{% url 'edit-profile' %}">
+        <font color="white"> สวัสดี &nbsp {{user.first_name}}&nbsp&nbsp{{user.last_name}}</font></a>
+            {% if user.profile.photoprofile %}
+              <img src="{{user.profile.photoprofile.url}}" width="30" class="rounded-circle">
+            {% endif %}
         <a class='btn btn-primary' href="{% url 'logout' %}">Logout</a>
       {% else %}
 

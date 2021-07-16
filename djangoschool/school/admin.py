@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ExamScore, AllStudent
+from .models import *
 
 # Register your models here.
 admin.site.register(ExamScore)
@@ -12,3 +12,5 @@ class StudentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(AllStudent, StudentAdmin)
+admin.site.register(Profile)
+admin.site.register(DocumentUpload)

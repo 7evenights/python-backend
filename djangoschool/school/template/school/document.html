@@ -1,0 +1,16 @@
+{% extends 'school/base.html' %}
+{% block content %}
+<div class="container">
+    {% for dc in document %}
+    <table style="width: 100%;">
+        <h1>ชื่อเอกสารทั้งหมด</h1>
+        <br>
+        <tr><th><a href="{{dc.document.url}}">{{dc.document_name}}</a></th><th>{{dc.other}}</th></tr>
+        
+    
+
+    </table>
+    {% endfor %}
+</div>
+  
+{% endblock content %}

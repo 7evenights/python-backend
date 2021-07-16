@@ -8,4 +8,6 @@ urlpatterns = [
     path("score/", ShowScore, name="score-page"),
     path("register/", Register, name="register-page"),
     path("search/", SearchStudent, name="search-page"),
+    path("profile/", EditProfile, name="edit-profile"),
+    path("document/", ShowDocument, name="document-page"),
 ]
